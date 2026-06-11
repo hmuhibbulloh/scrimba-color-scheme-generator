@@ -55,9 +55,15 @@ main {
 }
 
 .color {
-  border: 1px solid #ccc;
-  background-color: lightblue;
+  border-radius: 0.3em;
   flex: 1;
+  transition: 0.1s;
+}
+
+.color:hover {
+  cursor: pointer;
+  border: 2px solid #000;
+  transform: scale(1.05) translateY(-10px);
 }
 
 @media (min-width: 500px) {
@@ -65,5 +71,11 @@ main {
     flex-grow: 0;
     height: 300px;
     flex-basis: 150px;
+  }
+}
+
+@media (min-width: 501px) {
+  .boxes {
+    justify-content: center;
   }
 }

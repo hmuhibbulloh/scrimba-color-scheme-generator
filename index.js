@@ -4,10 +4,17 @@ const formEl = document.querySelector(".form");
 
 const APIUrl = "https://www.thecolorapi.com/scheme";
 
-function fetchColorScheme(seedColor, mode = "monochrome", count = 6) {
-  fetch(`${APIUrl}?hex=seedColor&mode`)
+function fetchColorScheme(
+  seedColor,
+  schemeMode = "monochrome",
+  colorsCount = 6,
+) {
+  fetch(`${APIUrl}?hex=${seedColor}&mode=${schemeMode}&count=${colorsCount}`)
     .then((res) => res.json())
-    .then((data) => generatePalette(data.colors));
+    .then((data) => {
+      console.log(data);
+      generatePalette(data.colors);
+    });
 }
 
 function generatePalette(colors) {
@@ -26,4 +33,9 @@ function generatePalette(colors) {
 
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
+  const formData = new FormData(formEl);
+  const seedColor = formData.get("seed-color").slice(1);
+  console.log(seedColor);
+  const scheme = formData.get("color-scheme");
+  fetchColorScheme("ed333b", scheme);
 });
