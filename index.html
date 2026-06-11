@@ -13,6 +13,27 @@
     <title>Scrimba Solo Project: Color Scheme Generator</title>
   </head>
   <body>
+    <header>
+      <form class="form">
+        <label for="seed-color">Seed color</label>
+        <input type="color" id="seed-colo" name="seed-color" />
+        <select name="color-scheme">
+          <option value="monochrome">Monochrome</option>
+          <option value="complement">Complement</option>
+          <option value="monochrome-dark">Monochrome Dark</option>
+          <option value="monochrome-light">Monochrome Light</option>
+          <option value="analogic">Analogic</option>
+          <option value="analogic-complement">Analogic Complement</option>
+          <option value="triad">Triad</option>
+          <option value="quad">Quad</option>
+        </select>
+        <button class="btn btn-generate">Generate</button>
+      </form>
+    </header>
+    <main>
+      <div class="boxes"></div>
+    </main>
+    <footer></footer>
     <script src="./index.js"></script>
   </body>
 </html>
