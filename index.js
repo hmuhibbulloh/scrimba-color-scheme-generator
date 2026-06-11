@@ -22,7 +22,7 @@ function generatePalette(colors) {
   for (const color of colors) {
     colorsHtml += `
         <div class="box">
-          <div class="color" style="background-color: ${color.hex.value}"></div>
+          <div class="color" data-hex-value="${color.hex.clean}" style="background-color: ${color.hex.value}"></div>
           <p class="hex">${color.hex.value}</p>
         </div>
         `;
